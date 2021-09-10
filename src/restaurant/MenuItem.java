@@ -6,16 +6,15 @@ public class MenuItem {
     private Double itemPrice;
     private String description;
     private String category;
-    private Boolean newItem;
+    private Boolean newItem = false;
 
 
 
-    public MenuItem(String itemName, Double itemPrice,String description,String category){
+    public MenuItem(String itemName, Double itemPrice,String category, String description){
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.description = description;
-        this.category = category;
-        this.newItem = true;
+        this.category = category;;
     }
 
     public String getItemName(){
@@ -31,7 +30,7 @@ public class MenuItem {
         return category;
     }
     public Boolean getNewItem(){
-        return getNewItem();
+        return newItem;
     }
 
     public void setItemName(String itemName) {
