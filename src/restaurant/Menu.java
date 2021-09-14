@@ -37,6 +37,7 @@ public class Menu {
 
 
         Date latestUpdateTime = new Date();
+
         System.out.println("Last update to program is: " + latestUpdateTime);
 
 
