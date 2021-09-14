@@ -5,16 +5,19 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Menu {
+    private Date dateLastUpdated;
     static Scanner in = new Scanner(System.in);
-    private Date latestUpdateTime = new Date();
     private ArrayList<MenuItem> menuItems;
 
     public Menu(ArrayList<MenuItem> items){
-
-    this.menuItems = items;
-
+        this.menuItems = items;
+        this.dateLastUpdated = new Date();
     }
 
+
+    public Date getLatestUpdate() {
+        return this.dateLastUpdated;
+    }
 
    public void addMenuItem(MenuItem item){
     this.menuItems.add(item);
@@ -23,6 +26,27 @@ public class Menu {
     public void removeMenuItem(MenuItem item){
         this.menuItems.remove(item);
     }
+
+    public void printItem(MenuItem item) {
+        System.out.println("******");
+        System.out.println(item.getItemName());
+        System.out.println(item.getItemPrice());
+        System.out.println(item.getCategory());
+        System.out.println(item.getDescription());
+        System.out.println(item.getNewItem());
+        System.out.println("**********");
+    }
+
+    public void printMenu(){
+        for (MenuItem item : menuItems ) {
+           printItem(item);
+        }
+    }
+
+
+
+
+
 //
 //
 //        MenuItem noodles = new MenuItem("Noodles", 19.99, "Main Course", "Noodles and Butter");

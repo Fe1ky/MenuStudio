@@ -49,5 +49,14 @@ public class MenuItem {
         this.newItem = newItem;
     }
 
+    public void printItem(MenuItem item) {
+        System.out.println("******");
+        System.out.println(itemName);
+        System.out.println(itemPrice);
+        System.out.println(description);
+        System.out.println(category);
+        System.out.println(newItem);
+        System.out.println("**********");
+    }
 
 }

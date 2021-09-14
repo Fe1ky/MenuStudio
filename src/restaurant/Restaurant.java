@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 public class Restaurant {
 
-    public static void main(String[] args){
+
+    public static void main( String[] args){
 
         MenuItem noodles = new MenuItem("Noodles", 19.99, "Main Course", "Noodles and Butter");
         MenuItem cake = new MenuItem("Cake", 4.99, "Dessert", "Chocolate Cake");
@@ -26,7 +27,8 @@ public class Restaurant {
         Menu menu = new Menu(menuItems);
         menu.addMenuItem(mozzarellaSticks);
         menu.removeMenuItem(mozzarellaSticks);
-
+        menu.printItem(pizza);
+        menu.printMenu();
 
 
 
