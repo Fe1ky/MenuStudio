@@ -6,73 +6,100 @@ import java.util.Scanner;
 
 public class Menu {
     static Scanner in = new Scanner(System.in);
+    private Date latestUpdateTime = new Date();
+    private ArrayList<MenuItem> menuItems;
 
-    public static void main(String[] args) {
+    public Menu(ArrayList<MenuItem> items){
 
-        MenuItem noodles = new MenuItem("Noodles", 19.99, "Main Course", "Noodles and Butter");
-        MenuItem cake = new MenuItem("Cake", 4.99, "Dessert", "Chocolate Cake");
-        MenuItem pizza = new MenuItem("Pepperoni Pizza", 15.99, "Main Course", "Pepperoni Pizza with red sauce");
-        MenuItem iceCream = new MenuItem("Chocolate Ice-Cream", 3.99, "Dessert", "IceCream with the flavor chocolate");
-        MenuItem friedPickles = new MenuItem("Fried Pickles", 8.99, "Appetizer", "Deep-Fried Pickles");
-        MenuItem mozzarellaSticks = new MenuItem("Mozzarella Sticks", 7.99, "Appetizer", "Deep-Fried Mozzarella Sticks");
+    this.menuItems = items;
 
-        ArrayList<MenuItem> menuItems = new ArrayList<>();
+    }
 
 
+   public void addMenuItem(MenuItem item){
+    this.menuItems.add(item);
+   }
 
-        menuItems.add(noodles);
-        menuItems.add(cake);
-        menuItems.add(pizza);
-        menuItems.add(iceCream);
-        menuItems.add(friedPickles);
-        menuItems.add(mozzarellaSticks);
+    public void removeMenuItem(MenuItem item){
+        this.menuItems.remove(item);
+    }
+//
+//
+//        MenuItem noodles = new MenuItem("Noodles", 19.99, "Main Course", "Noodles and Butter");
+//        MenuItem cake = new MenuItem("Cake", 4.99, "Dessert", "Chocolate Cake");
+//        MenuItem pizza = new MenuItem("Pepperoni Pizza", 15.99, "Main Course", "Pepperoni Pizza with red sauce");
+//        MenuItem iceCream = new MenuItem("Chocolate Ice-Cream", 3.99, "Dessert", "IceCream with the flavor chocolate");
+//        MenuItem friedPickles = new MenuItem("Fried Pickles", 8.99, "Appetizer", "Deep-Fried Pickles");
+//        MenuItem mozzarellaSticks = new MenuItem("Mozzarella Sticks", 7.99, "Appetizer", "Deep-Fried Mozzarella Sticks");
+//
 
-        for(int i = 0; i<menuItems.size(); i++) {
-            if(i == (menuItems.size() - 1)) {
-               menuItems.get(i).setNewItem(true);
-           }
-        }
-
-
-
-
-        Date latestUpdateTime = new Date();
-
-        System.out.println("Last update to program is: " + latestUpdateTime);
-
-
-        System.out.println("Please input a menu-item: ");
-
-        String input = in.nextLine();
-
-        System.out.println("your input is: " + input);
-
-
-        for(MenuItem item : menuItems) {
-            String var1 = item.getItemName();
-            System.out.println("working");
-            if (input.equals(var1)) {
-                menuItems.remove(item);
-                break;
-            }
-
-            System.out.println("Please input item price: ");
-            String priceInput = in.nextLine();
-            double price = Double.parseDouble(priceInput);
+//
+//
+//
+//        menuItems.add(noodles);
+//        menuItems.add(cake);
+//        menuItems.add(pizza);
+//        menuItems.add(iceCream);
+//        menuItems.add(friedPickles);
+//        menuItems.add(mozzarellaSticks);
+//
 
 
-            System.out.println("Please input category (Appetizer, Main Course, or Dessert): ");
-            String category = in.nextLine();
+//
+//        for(int i = 0; i<menuItems.size(); i++) {
+//            if(i == (menuItems.size() - 1)) {
+//               menuItems.get(i).setNewItem(true);
+//           }
+//        }
 
 
-            System.out.println("Please input menu item description: ");
-            String description = in.nextLine();
 
 
-            MenuItem newItemInForLoop = new MenuItem(input, price, category, description);
-            menuItems.add(newItemInForLoop);
-            break;
-        }
+
+
+
+
+//        System.out.println("Last update to program is: " + latestUpdateTime);
+//
+//
+//        System.out.println("Please input a menu-item: ");
+//
+//        String input = in.nextLine();
+//
+//        System.out.println("your input is: " + input);
+//
+//
+//        for(MenuItem item : menuItems) {
+//            String var1 = item.getItemName();
+//            System.out.println("working");
+//            if (input.equals(var1)) {
+//                menuItems.remove(item);
+//                break;
+//            }
+//
+//            System.out.println("Please input item price: ");
+//            String priceInput = in.nextLine();
+//            double price = Double.parseDouble(priceInput);
+//
+//
+//            System.out.println("Please input category (Appetizer, Main Course, or Dessert): ");
+//            String category = in.nextLine();
+//
+//
+//            System.out.println("Please input menu item description: ");
+//            String description = in.nextLine();
+//
+//
+//            MenuItem newItemInForLoop = new MenuItem(input, price, category, description);
+//            menuItems.add(newItemInForLoop);
+//            break;
+//        }
+
+
+
+
+
+
 
 /*`
         ArrayList<String> menuItems = new ArrayList<>();
@@ -96,8 +123,8 @@ public class Menu {
 
         } while(!newStudent.equals(""));
 */
-        int lastItem = menuItems.size() - 1;
-        menuItems.get(lastItem).setNewItem(true);
+//        int lastItem = menuItems.size() - 1;
+//        menuItems.get(lastItem).setNewItem(true);
 
 
 
@@ -134,4 +161,44 @@ public class Menu {
 
 
     }
-}
+
+
+//    public void editMenu(String name){
+//
+//
+//
+//        for(MenuItem item : menuItems) {
+//            String var1 = item.getItemName();
+//            System.out.println("working");
+//            if (name.equals(var1)) {
+//                menuItems.remove(item);
+//                break;
+//            }
+//
+//            System.out.println("Please input item price: ");
+//            String priceInput = in.nextLine();
+//            double price = Double.parseDouble(priceInput);
+//
+//
+//            System.out.println("Please input category (Appetizer, Main Course, or Dessert): ");
+//            String category = in.nextLine();
+//
+//
+//            System.out.println("Please input menu item description: ");
+//            String description = in.nextLine();
+//
+//
+//            MenuItem newItemInForLoop = new MenuItem(input, price, category, description);
+//            menuItems.add(newItemInForLoop);
+//            break;
+//        }
+//    }
+//
+//
+//}
+
+
+//
+
+
+
